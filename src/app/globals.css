@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 94%; /* Light Gray #F0F0F0 */
+    --foreground: 0 0% 3.9%; /* Default dark for text */
+
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 199 76% 52%; /* Vibrant Blue #29ABE2 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    --secondary: 0 0% 90%; /* Slightly darker gray for secondary elements */
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%; /* Adjusted for better contrast on light gray */
+
+    --accent: 120 73% 75%; /* Lively Green #90EE90 */
+    --accent-foreground: 0 0% 9%; /* Dark text on light green accent */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%; /* Border for inputs, cards */
+    --input: 0 0% 85%;
+    --ring: 199 76% 52%; /* Primary color for focus rings */
+    
+    --chart-1: 199 76% 52%; /* Primary for charts */
+    --chart-2: 120 60% 65%; /* Accent for charts */
+    --chart-3: 0 0% 50%;   /* Neutral gray for charts */
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Sidebar variables, can remain default or be themed if sidebar is used */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 199 76% 52%; /* Vibrant Blue #29ABE2 */
+    --primary-foreground: 0 0% 10%; /* Dark text on primary in dark mode */
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 120 60% 65%; /* Lively Green, slightly desaturated */
+    --accent-foreground: 0 0% 98%; /* Light text on accent */
+
+    --destructive: 0 70% 50%; /* Adjusted destructive for dark mode */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 199 76% 52%; /* Primary color for focus rings */
+    
+    --chart-1: 199 76% 60%;
+    --chart-2: 120 60% 70%;
+    --chart-3: 0 0% 65%;
+    --chart-4: 43 74% 70%;
+    --chart-5: 27 87% 70%;
+
+    /* Sidebar variables for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 199 76% 52%; /* Use primary color for sidebar primary in dark */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 199 76% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
