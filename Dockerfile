@@ -33,7 +33,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 # Set runtime environment variable for API endpoint
 # This can be overridden when running the container
-ENV NEXT_PUBLIC_API_ENDPOINT=${NEXT_PUBLIC_API_ENDPOINT:-https://ajuste-correlacao-hindemburg-halissontorres.replit.app/ajuste_correlacao_potencial/}
+ENV NEXT_PUBLIC_API_ENDPOINT=${NEXT_PUBLIC_API_ENDPOINT:-http://127.0.0.1:5000/}
 ENV PORT=9002
 
 # Create a non-root user and group

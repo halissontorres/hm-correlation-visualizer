@@ -18,7 +18,7 @@ services:
       # NEXT_PUBLIC_API_ENDPOINT can be set in a .env file in this directory
       # or directly in your system environment.
       # It defaults to the Replit URL if not otherwise set.
-      NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT:-https://ajuste-correlacao-hindemburg-halissontorres.replit.app/ajuste_correlacao_potencial/}
+      NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT:-http://127.0.0.1:5000/}
     restart: unless-stopped
     # For development with hot-reloading (not for production build from this Dockerfile):
 
@@ -39,7 +39,7 @@ services:
       # NEXT_PUBLIC_API_ENDPOINT can be set in a .env file in this directory
       # or directly in your system environment.
       # It defaults to the Replit URL if not otherwise set.
-      NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT:-https://ajuste-correlacao-hindemburg-halissontorres.replit.app/ajuste_correlacao_potencial/}
+      NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT:-http://127.0.0.1:5000/}
     restart: unless-stopped
     volumes:
       - .:/app
