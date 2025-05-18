@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Optional: Override build-time NEXT_PUBLIC_API_ENDPOINT if needed
+        # For example:
+        # NEXT_PUBLIC_API_ENDPOINT: "http://your-dev-api-url.com/api"
+    ports:
+      - "9002:9002" # Maps host port 9002 to container port 9002
+    environment:
+      # Runtime environment variables
+      NODE_ENV: production
+      PORT: 9002 # Next.js standalone server will listen on this port
+      # NEXT_PUBLIC_API_ENDPOINT can be set in a .env file in this directory
+      # or directly in your system environment.
+      # It defaults to the Replit URL if not otherwise set.
+      NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT:-https://ajuste-correlacao-hindemburg-halissontorres.replit.app/ajuste_correlacao_potencial/}
+    restart: unless-stopped
+    # For development with hot-reloading (not for production build from this Dockerfile):
+
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Optional: Override build-time NEXT_PUBLIC_API_ENDPOINT if needed
+        # For example:
+        # NEXT_PUBLIC_API_ENDPOINT: "http://your-dev-api-url.com/api"
+    ports:
+      - "9002:9002" # Maps host port 9002 to container port 9002
+    environment:
+      # Runtime environment variables
+      NODE_ENV: development
+      PORT: 9002 # Next.js standalone server will listen on this port
+      # NEXT_PUBLIC_API_ENDPOINT can be set in a .env file in this directory
+      # or directly in your system environment.
+      # It defaults to the Replit URL if not otherwise set.
+      NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT:-https://ajuste-correlacao-hindemburg-halissontorres.replit.app/ajuste_correlacao_potencial/}
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - /app/node_modules # Prevent host node_modules from overwriting container's
+    command: npm run dev # Override CMD from Dockerfile for dev mode
